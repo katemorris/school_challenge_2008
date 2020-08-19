@@ -20,9 +20,8 @@ class School
   end
 
   def standard_student_names
-    formal_names = []
-    @student_names.each do |name|
-      formal_names << name.capitalize
+    formal_names = @student_names.map do |name|
+      name.capitalize
     end
     return formal_names
   end

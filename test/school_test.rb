@@ -56,11 +56,13 @@ class SchoolTest < Minitest::Test
   #Iteration 3 Test:
   def test_school_is_full_time
     school = School.new('9:00', 7)
+    school4 = School.new('9:00', 4)
     school.add_student_name('Aurora')
     school.add_student_name('tim')
     school.add_student_name('megan')
 
     assert school.is_full_time?
+    refute school4.is_full_time?
     assert_equal ["Aurora", "Tim", "Megan"], school.standard_student_names
   end
 
