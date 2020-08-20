@@ -48,9 +48,13 @@ class SchoolTest < Minitest::Test
     # skip
     school1 = School.new('9:00', 7)
     school2 = School.new('9:00', 3)
+    school3 = School.new('9:30', 3.5)
+    school4 = School.new('9:30', 3)
 
     assert_equal '16:00', school1.end_time
     assert_equal '12:00', school2.end_time
+    assert_equal '13:00', school3.end_time
+    assert_equal '12:30', school4.end_time
   end
 
   #Iteration 3 Test:
@@ -71,11 +75,11 @@ class SchoolTest < Minitest::Test
     school1 = School.new('9:00', 7)
     school2 = School.new('10:00', 8)
     school3 = School.new('9:00', 2)
-    school4 = School.new('10:00', 2)
+    school4 = School.new('9:30', 2)
 
     assert_equal '4:00', school1.convert_end_time_to_clock_time
     assert_equal '6:00', school2.convert_end_time_to_clock_time
     assert_equal '11:00', school3.convert_end_time_to_clock_time
-    assert_equal '12:00', school4.convert_end_time_to_clock_time
+    assert_equal '11:30', school4.convert_end_time_to_clock_time
   end
 end
