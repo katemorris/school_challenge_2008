@@ -20,13 +20,16 @@ class School
   end
 
   def standard_student_names
-    formal_names = @student_names.map do |name|
+    @student_names.map do |name|
       name.capitalize
     end
-    return formal_names
   end
 
   def convert_end_time_to_clock_time
-    (self.end_time.to_i - 12).to_s + ":00"
+    if self.end_time.to_i > 12
+      (self.end_time.to_i - 12).to_s + ":00"
+    else
+      return self.end_time
+    end
   end
 end
